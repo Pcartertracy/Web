@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<title> JQuery Test </title>
+	<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script src="http://cdn.pubnub.com/pubnub.min.js"></script>
+	
+	<script type="text/javascript">
+	var pubnub; 
+	$(document).ready(function)
+	{ 
+		pubnub = PUBNUB.init({
+			publish_key : ,
+			subscride_key :
+			});
+
+		pubnub.subscribe({
+
+			channel: "thechatroom",
+			message: handleMessage 
+
+		}): 
+
+		$('#myForm').submit(function(e){ 
+			e.preventDefault(); 
+			pubnub.publish({
+				channel:
+			})
+		}
+	}
+
+	</script>
+
+	</head>
+	<body>
+	<h1 id="mytext">mytext</h1>
+	<form name="myForm" id="myForm" method="GET">
+ 		<input id="message" type="text"/>
+ 		<input id="chatbtn" type="submit" value="send"/>
+  
+	</form>
+	</body>
+</html>
